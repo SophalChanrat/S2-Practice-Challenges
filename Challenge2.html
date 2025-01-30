@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2</title>
+</head>
+<body>
+    <script>
+        function reverseArray(arr) {
+            return arr.reverse();
+        }
+
+        const input = prompt("Enter an array of numbers separated by commas:");
+        const array = input.split(",").map(Number);
+        console.log("Original array:", array);
+        const reversedArray = reverseArray(array);
+        console.log("Reversed array:", reversedArray);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 6</title>
+</head>
+<body>
+    <script>
+        function countVotes(votes) {
+            const voteCount = { A: 0, B: 0, C: 0 };
+
+            for (const vote of votes) {
+                if (voteCount.hasOwnProperty(vote)) {
+                    voteCount[vote]++;
+                }
+            }
+
+            const maxVotes = Math.max(voteCount.A, voteCount.B, voteCount.C);
+            const winners = Object.keys(voteCount).filter(candidate => voteCount[candidate] === maxVotes);
+
+            if (votes.length === 0) {
+                return { voteCount, winner: "There is no votes yet" };
+            } else if (winners.length > 1) {
+                return { voteCount, winner: winners.join(", ") + " are both winners" };
+            } else {
+                return { voteCount, winner: winners[0] + " is the winner" };
+            }
+        }
+
+        const input = prompt("Enter votes for candidates A, B, and C:");
+        const votes = input.split(',').map(vote => vote.trim()).filter(vote => vote);
+
+        const result = countVotes(votes);
+        console.log(result.winner);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1</title>
+</head>
+<body>
+    <script>
+        function challenge1(width, height) {
+        let rectangleString = '';
+        for (let i = 0; i < height; i++) {
+                for (let j = 0; j < width; j++) {
+                    rectangleString += '*';
+                }
+                rectangleString += '\n';
+        }
+        return rectangleString;
+        }
+        const width = parseInt(prompt("Enter the width of the rectangle:"));
+        const height = parseInt(prompt("Enter the height of the rectangle:"));
+
+        console.log(challenge1(width, height));
+    </script>
+</body>
+</html>
